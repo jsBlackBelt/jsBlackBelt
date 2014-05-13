@@ -1,11 +1,10 @@
 /**
  * Created by sefi on 5/13/14.
  */
-
 'use strict';
 
 angular.module('jsBlackBelt.Services')
-    .factory('TimingSrv', ['$log', '$interval', function($log, $interval) {
+    .factory('TimingSrv', ['$interval', function($interval) {
         var registrants = {},
             intervalInterval = 1000;
 
