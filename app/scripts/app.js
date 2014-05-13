@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('jsBlackBeltApp', [
+angular.module('jsBlackBelt', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
@@ -16,3 +16,9 @@ angular.module('jsBlackBeltApp', [
                 redirectTo: '/'
             });
     });
+
+angular.module('jsBlackBelt.Services', []);
+angular.module('jsBlackBelt.Directives', []);
+angular.module('jsBlackBelt.Controllers', []);
+angular.module('jsBlackBelt.Constants', []);
+angular.module('jsBlackBelt.Filters', []);
