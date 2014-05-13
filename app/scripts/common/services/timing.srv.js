@@ -4,39 +4,39 @@
 'use strict';
 
 angular.module('jsBlackBelt.Services')
-    .factory('TimingSrv', ['$interval', function($interval) {
+    .factory('TimingSrv', ['$interval', function ($interval) {
         var registrants = {},
-            intervalInterval = 1000;
+            internalInterval = 1000;
 
         var start = function () {
-            $interval(service.tick, intervalInterval);
+            $interval(service.tick, internalInterval);
             service.tick();
         };
 
         var service = {
-            register: function(id, tickHandler, interval, delay) {
+            register: function (id, tickHandler, interval, delay) {
                 registrants[id] = {
-                    tick: tickHandler,                 // tick handler function.
-                    configuredInterval: interval,       // configured interval.
-                    delay: delay                        // delay until first tick.
+                    tick: tickHandler,        // tick handler function.
+                    interval: interval,       // configured interval.
+                    delay: delay              // delay until first tick.
                 };
             },
 
-            unregister: function(id) {
+            unregister: function (id) {
                 delete registrants[id];
             },
 
-            tick: function() {
-                angular.forEach(registrants, function(registrant) {
+            tick: function () {
+                angular.forEach(registrants, function (registrant) {
                     // update the delay.
-                    registrant.delay -= intervalInterval;
+                    registrant.delay -= internalInterval;
 
                     if (registrant.delay <= 0) {
                         // time to tick!
                         registrant.tick();
 
                         //reset delay to configured interval
-                        registrant.delay = registrant.configuredInterval;
+                        registrant.delay = registrant.interval;
                     }
                 });
             }
