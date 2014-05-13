@@ -1,0 +1,40 @@
+{
+    "bitwise": true,
+    "camelcase": true,
+    "curly": true,
+    "eqeqeq": true,
+    "immed": true,
+    "indent": false,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "quotmark": "single double",
+    "undef": true,
+    "unused": "vars",
+    "strict": true,
+    "trailing": true,
+
+    "smarttabs": true,
+
+    "browser": true,
+    "node": true,
+    "esnext": true,
+    "regexp": true,
+    "white": false,
+    "globals": {
+        "$": false,
+        "angular": false,
+        "jQuery": false
+    },
+    "predef": [
+        "confirm",
+        "describe",			// Used by mocha
+        "it",				// Used by mocha
+        "before",			// Used by mocha
+        "beforeEach",			// Used by mocha
+        "after",			// Used by mocha
+        "afterEach",		// Used by mocha
+        "inject",			// Used by mocha
+        "expect"			// Used by mocha
+    ]
+}
