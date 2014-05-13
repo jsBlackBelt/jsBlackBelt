@@ -6,10 +6,10 @@
 angular.module('jsBlackBelt.Services')
     .factory('TimingSrv', ['$interval', function($interval) {
         var registrants = {},
-            intervalInterval = 1000;
+            internalInterval = 1000;
 
         var start = function () {
-            $interval(service.tick, intervalInterval);
+            $interval(service.tick, internalInterval);
             service.tick();
         };
 
@@ -29,7 +29,7 @@ angular.module('jsBlackBelt.Services')
             tick: function() {
                 angular.forEach(registrants, function(registrant) {
                     // update the delay.
-                    registrant.delay -= intervalInterval;
+                    registrant.delay -= internalInterval;
 
                     if (registrant.delay <= 0) {
                         // time to tick!
