@@ -6,17 +6,17 @@
 angular.module('jsBlackBelt.Services')
     .factory('TimingSrv', ['$interval', function($interval) {
         var registrants = {},
-            internalInterval = 1000;
+            intervalInterval = 1000;
 
         var start = function () {
-            $interval(service.tick, internalInterval);
+            $interval(service.tick, intervalInterval);
             service.tick();
         };
 
         var service = {
-            register: function(id, tickFunction, interval, delay) {
+            register: function(id, tickHandler, interval, delay) {
                 registrants[id] = {
-                    tick: tickFunction,                 // tick handler function.
+                    tick: tickHandler,                 // tick handler function.
                     configuredInterval: interval,       // configured interval.
                     delay: delay                        // delay until first tick.
                 };
@@ -29,7 +29,7 @@ angular.module('jsBlackBelt.Services')
             tick: function() {
                 angular.forEach(registrants, function(registrant) {
                     // update the delay.
-                    registrant.delay -= internalInterval;
+                    registrant.delay -= intervalInterval;
 
                     if (registrant.delay <= 0) {
                         // time to tick!
