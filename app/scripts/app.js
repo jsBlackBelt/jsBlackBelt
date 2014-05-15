@@ -4,7 +4,16 @@ angular.module('jsBlackBelt', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'angularLocalStorage',
+    'ui.bootstrap',
+    'pascalprecht.translate',
+    'jsBlackBelt.Services',
+    'jsBlackBelt.Directives',
+    'jsBlackBelt.Controllers',
+    'jsBlackBelt.Constants',
+    'jsBlackBelt.Filters'
+
 ])
     .config(function ($routeProvider) {
         $routeProvider
@@ -17,8 +26,8 @@ angular.module('jsBlackBelt', [
             });
     });
 
-angular.module('jsBlackBelt.Services', []);
-angular.module('jsBlackBelt.Directives', []);
-angular.module('jsBlackBelt.Controllers', []);
+angular.module('jsBlackBelt.Services', ['ngResource', 'angularLocalStorage']);
+angular.module('jsBlackBelt.Directives', ['ui.bootstrap', 'pascalprecht.translate']);
+angular.module('jsBlackBelt.Controllers', ['angularLocalStorage', 'pascalprecht.translate']);
 angular.module('jsBlackBelt.Constants', []);
 angular.module('jsBlackBelt.Filters', []);
