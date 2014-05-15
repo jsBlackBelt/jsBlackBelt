@@ -5,7 +5,7 @@
 'use strict';
 
 angular.module('jsBlackBelt')
-    .controller('MainCtrl', function ($scope) {
+    .controller('ScopeTestCtrl', function ($scope) {
 
         $scope.object = {
             data: {
