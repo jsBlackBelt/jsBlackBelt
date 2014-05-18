@@ -16,45 +16,51 @@ describe('cache: ', function () {
             module('jsBlackBelt');
 
             inject(function ($injector) {
-                injector        = $injector;
-                cacheSrv        = injector.get('CacheSrv');
-                storage         = injector.get('storage');
-                $translate      = injector.get('$translate');
+                injector = $injector;
+                cacheSrv = injector.get('CacheSrv');
+                storage = injector.get('storage');
+                $translate = injector.get('$translate');
             });
         });
     });
 
     describe('', function () {
-        beforeEach(function() {
+        beforeEach(function () {
             storage.clearAll();
         });
 
-        it('sanity', function() {
+        it('sanity', function () {
             expect(storage).not.toBeUndefined;
             expect(cacheSrv).not.toBeUndefined;
             expect($translate).not.toBeUndefined;
         });
 
-        it('should not allow null, empty string or undefined key', function() {
+        it('should not allow null, empty string or undefined key', function () {
             var key;
 
             // test undefined
             expect(key).toBeUndefined;
-            expect(function(){cacheSrv.getGetter(key);}).toThrow();
+            expect(function () {
+                cacheSrv.getGetter(key);
+            }).toThrow();
 
             // test empty string
             key = "";
             expect(key).toEqual("");
-            expect(function(){cacheSrv.getGetter(key);}).toThrow();
+            expect(function () {
+                cacheSrv.getGetter(key);
+            }).toThrow();
 
             // test null
             key = null;
             expect(key).toEqual(null);
-            expect(function(){cacheSrv.getGetter(key);}).toThrow();
+            expect(function () {
+                cacheSrv.getGetter(key);
+            }).toThrow();
 
         });
 
-        it('should return undefined as default value' , function() {
+        it('should return undefined as default value', function () {
             var value = cacheSrv.getGetter("key")();
             expect(value).toBeUndefined;
 
@@ -62,7 +68,7 @@ describe('cache: ', function () {
             expect(value).toBeUndefined;
         });
 
-        it('should return correct value', function() {
+        it('should return correct value', function () {
             var key = "key",
                 value = "value",
                 value2 = "value2",
@@ -80,7 +86,7 @@ describe('cache: ', function () {
 
         });
 
-        it('should remove key from storage', function() {
+        it('should remove key from storage', function () {
             var returnedValue,
                 key = "key",
                 value = "value";
