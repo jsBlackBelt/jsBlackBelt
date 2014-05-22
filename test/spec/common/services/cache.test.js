@@ -24,7 +24,7 @@ describe('cache: ', function () {
         });
     });
 
-    describe('', function () {
+    describe('tests', function () {
         beforeEach(function () {
             storage.clearAll();
         });
