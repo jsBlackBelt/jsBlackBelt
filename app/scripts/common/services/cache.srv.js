@@ -1,6 +1,9 @@
 /**
  * Created by sefi on 5/14/14.
  *
+ * related post:
+ * http://ajsblackbelt.wordpress.com/2014/05/27/local-storage-cache-service/
+ *
  * Free to use and abuse.
  * If you modify jsBlackBelt code, please let me know or submit a pull request for the benefit of others.
  */
@@ -9,7 +12,8 @@
 
 angular.module("jsBlackBelt.Services")
     .factory('CacheSrv', ['storage', '$log', function (storage, $log) {
-        var api = {};
+
+        var api = {};       // the api map
 
         // create a setter function for the key
         var createSetter = function(key) {
@@ -56,8 +60,8 @@ angular.module("jsBlackBelt.Services")
             };
         },
 
-        // check if key is valid and lazily create api
-        checkAndCreateKey = function(key) {
+        // check if key is valid and lazily create API
+        verifyKey = function(key) {
             if (!key || angular.isUndefined(key)) {
                 throw new Error("key [" + key + "] is not valid");
             }
@@ -78,7 +82,7 @@ angular.module("jsBlackBelt.Services")
              * @returns {*|props.setter}
              */
             getSetter: function(key) {
-                checkAndCreateKey(key);
+                verifyKey(key);
                 return api[key].setter;
             },
 
@@ -92,7 +96,7 @@ angular.module("jsBlackBelt.Services")
              * @returns {*|props.getter}
              */
             getGetter: function(key) {
-                checkAndCreateKey(key);
+                verifyKey(key);
                 return api[key].getter;
             }
         };

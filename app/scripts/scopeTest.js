@@ -1,6 +1,9 @@
 /**
  * Created by sefi on 5/15/14.
  *
+ * related post:
+ * http://ajsblackbelt.wordpress.com/2014/05/15/watch-invoked-multiple-times-what-gives/
+ *
  * Free to use and abuse.
  * If you modify jsBlackBelt code, please let me know or submit a pull request for the benefit of others.
  */

@@ -22,7 +22,7 @@ angular.module('jsBlackBelt', [
     'jsBlackBelt.Controllers',
     'jsBlackBelt.Directives'
 
-])
+    ])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
@@ -36,7 +36,7 @@ angular.module('jsBlackBelt', [
 
 angular.module('jsBlackBelt.Services', ['ngResource', 'angularLocalStorage']);
 angular.module('jsBlackBelt.Directives', ['ui.bootstrap', 'pascalprecht.translate']);
-angular.module('jsBlackBelt.Controllers', ['angularLocalStorage', 'pascalprecht.translate']);
+angular.module('jsBlackBelt.Controllers', ['pascalprecht.translate']);
 angular.module('jsBlackBelt.Constants', []);
 angular.module('jsBlackBelt.Model', []);
 angular.module('jsBlackBelt.Filters', []);

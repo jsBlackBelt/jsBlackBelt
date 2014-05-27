@@ -1,6 +1,9 @@
 /**
  * Created by sefi on 5/13/14.
  *
+ * related post:
+ * http://ajsblackbelt.wordpress.com/2014/05/13/timing-service/
+ *
  * Free to use and abuse.
  * If you modify jsBlackBelt code, please let me know or submit a pull request for the benefit of others.
  */
