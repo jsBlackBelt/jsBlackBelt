@@ -43,7 +43,7 @@ angular.module("jsBlackBelt.Services")
                 }
 
                 return value;
-            }
+            };
         },
 
         createAPIForKey = function(key) {
