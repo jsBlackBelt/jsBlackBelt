@@ -1,6 +1,11 @@
 // Karma configuration
 // http://karma-runner.github.io/0.10/config/configuration-file.html
 
+/**
+ * Free to use and abuse.
+ * If you modify jsBlackBelt code, please let me know or submit a pull request for the benefit of others.
+ */
+
 module.exports = function (config) {
     config.set({
         // base path, that will be used to resolve files and exclude
@@ -10,7 +15,7 @@ module.exports = function (config) {
         frameworks: ['jasmine'],
 
         // dots / progress
-        reporters: ['dots'],
+        reporters: ['dots', 'junit'],
 
         // list of files / patterns to load in the browser
         files: [
@@ -57,6 +62,10 @@ module.exports = function (config) {
         // - IE (only Windows)
         browsers: ['PhantomJS'],
 
+        junitReporter: {
+            outputFile: 'test/test_results/test_results.xml',
+            suite: 'jsBlackBelt'
+        },
 
         // Continuous Integration mode
         // if true, it capture browsers, run tests and exit

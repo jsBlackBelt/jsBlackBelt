@@ -1,6 +1,11 @@
 // Karma configuration
 // http://karma-runner.github.io/0.10/config/configuration-file.html
 
+/**
+ * Free to use and abuse.
+ * If you modify jsBlackBelt code, please let me know or submit a pull request for the benefit of others.
+ */
+
 module.exports = function(config) {
   config.set({
     // base path, that will be used to resolve files and exclude

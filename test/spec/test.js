@@ -1,3 +1,10 @@
+/**
+ * Created by sefi on 5/26/14.
+ *
+ * Free to use and abuse.
+ * If you modify jsBlackBelt code, please let me know or submit a pull request for the benefit of others.
+ */
+
 'use strict';
 
 describe('The quickstart object', function () {

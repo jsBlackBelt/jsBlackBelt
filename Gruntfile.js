@@ -1,4 +1,8 @@
 // Generated on 2014-05-13 using generator-angular 0.6.0-rc.2
+/**
+ * Free to use and abuse.
+ * If you modify jsBlackBelt code, please let me know or submit a pull request for the benefit of others.
+ */
 'use strict';
 
 // # Globbing
