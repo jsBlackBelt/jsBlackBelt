@@ -18,8 +18,8 @@ angular.module("jsBlackBelt.Services")
         // create a setter function for the key
         var createSetter = function(key) {
             return function(value) {
-                // if both key and value are valid
-                if (key && value) {
+                // if value are valid
+                if (angular.isDefined(value)) {
                     try {
                         storage.set(key, value);
                     } catch (e) {
@@ -39,7 +39,7 @@ angular.module("jsBlackBelt.Services")
             return function() {
                 // try to get the value for the key from the storage.
                 var value = storage.get(key);
-                if (!value) {
+                if (value === null) {
                     // if there is no value, override it to undefined and store it.
                     value = undefined;
                     var setter = api[key].setter;

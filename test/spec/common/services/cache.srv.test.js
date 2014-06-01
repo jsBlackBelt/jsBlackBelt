@@ -105,5 +105,26 @@ describe('cacheSrv: ', function () {
             returnedValue = storage.get(key);
             expect(returnedValue).toBeUndefined;
         });
+
+        it('should not store invalid value', function () {
+            var returnedValue,
+                key = "key",
+                value;
+
+            value = "";
+            cacheSrv.getSetter(key)(value);
+            returnedValue = cacheSrv.getGetter(key)();
+            expect(returnedValue).toEqual('');
+
+            // todo: this test should actually fail since the cache should support 0 as the value
+            value = 0;
+            cacheSrv.getSetter(key)(value);
+            returnedValue = cacheSrv.getGetter(key)();
+            expect(returnedValue).toEqual(0);
+
+            cacheSrv.getSetter(key)();
+            returnedValue = cacheSrv.getGetter(key)();
+            expect(returnedValue).toBeUndefined;
+        });
     });
 });
