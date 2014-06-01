@@ -116,7 +116,6 @@ describe('cacheSrv: ', function () {
             returnedValue = cacheSrv.getGetter(key)();
             expect(returnedValue).toEqual('');
 
-            // todo: this test should actually fail since the cache should support 0 as the value
             value = 0;
             cacheSrv.getSetter(key)(value);
             returnedValue = cacheSrv.getGetter(key)();
