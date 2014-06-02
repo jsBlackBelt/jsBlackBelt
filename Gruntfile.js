@@ -371,8 +371,8 @@ module.exports = function (grunt) {
             },
             dist: {
              files: {
-               '<%= yeoman.dist %>/scripts/scripts.js': [
-                 '<%= yeoman.dist %>/scripts/scripts.js'
+               '<%= yeoman.dist %>/scripts/jsblackbelt.js': [
+                 '<%= yeoman.dist %>/scripts/jsblackbelt.js'
                ]
              }
            }
@@ -446,9 +446,7 @@ module.exports = function (grunt) {
         'ngmin',
         'cssmin',
         'uglify',
-        'rev',
-        'usemin',
-        'compress'
+        'usemin'
     ]);
 
     grunt.registerTask('default', [
