@@ -1,0 +1,14 @@
+<div class="popOverDialog" id="{{popupId}}" ng-class="dialogStyle" tabindex="0" >
+    <!-- starts scripts/common/partials/popOverDialog.tpl.html (common.drv.js) -->
+    <h3 ng-if="shouldShowTitle">{{ dialogTitle }}</h3>
+    <!-- body -->
+    <div ng-transclude></div>
+
+
+    <!-- btns-area -->
+    <div class="btns-area" ng-if="shouldShowButtons">
+        <button ng-show="!readOnly" ng-click="onSave()">Save</button>
+        <a ng-click="onCancel()" class="cancel" >Cancel</a>
+    </div>
+    <!-- ends scripts/common/partials/popOverDialog.tpl.html (common.drv.js) -->
+</div>

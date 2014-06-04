@@ -34,11 +34,11 @@ module.exports = function (grunt) {
         watch: {
             js: {
                 files: ['{.tmp,<%= yeoman.app %>}/scripts/**/*.js'],
-                tasks: ['newer:jshint:all']
+                tasks: ['jshint:all']
             },
             jsTest: {
                 files: ['test/spec/**/*.js'],
-                tasks: ['newer:jshint:test', 'karma']
+                tasks: ['jshint:test', 'karma']
             },
             compass: {
                 files: ['<%= yeoman.app %>/styles/**/*.{scss,sass}'],
@@ -46,7 +46,7 @@ module.exports = function (grunt) {
             },
             styles: {
                 files: ['<%= yeoman.app %>/styles/**/*.css'],
-                tasks: ['newer:copy:styles', 'autoprefixer']
+                tasks: ['copy:styles', 'autoprefixer']
             },
             gruntfile: {
                 files: ['Gruntfile.js']
@@ -301,7 +301,7 @@ module.exports = function (grunt) {
                             '*.{ico,png,txt}',
                             '.htaccess',
                             'bower_components/**/*',
-                            'images/**/*.{png,gif,webp}',
+                            'images/**/*.{png,jpg,jpeg,gif,webp}',
                             'styles/fonts/*',
                             'i18n/*.json',
                             'WEB-INF/*'
