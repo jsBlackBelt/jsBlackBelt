@@ -1,6 +1,10 @@
 /**
  * Created by sefi on 4/22/14.
+ *
+ * Free to use and abuse.
+ * If you modify jsBlackBelt code, please let me know or submit a pull request for the benefit of others.
  */
+
 'use strict';
 
 angular.module('jsBlackBelt.Directives')
