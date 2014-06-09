@@ -8,7 +8,6 @@
 'use strict';
 
 angular.module('jsBlackBelt.Directives')
-
     .directive('jsbbFallbackSrc', [function () {
         /**
          * This directive serves as a fallback in case the image source wasn't found.

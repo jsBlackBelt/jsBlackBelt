@@ -230,28 +230,43 @@ module.exports = function (grunt) {
                 ]
             }
         },
-        htmlmin: {
-            dist: {
-                options: {
-                    // Optional configurations that you can uncomment to use
-                    // removeCommentsFromCDATA: true,
-                    // collapseBooleanAttributes: true,
-                    // removeAttributeQuotes: true,
-                    // removeRedundantAttributes: true,
-                    // useShortDoctype: true,
-                    // removeEmptyAttributes: true,
-                    // removeOptionalTags: true*/
-                },
-                files: [
-                    {
-                        expand: true,
-                        cwd: '<%= yeoman.app %>',
-                        src: ['*.html', 'scripts/**/*.html', 'conf/*'],
-                        dest: '<%= yeoman.dist %>'
-                    }
-                ]
+        html2js: {
+            options: {
+                htmlmin: {
+                    collapseWhitespace: true,
+                    collapseBooleanAttributes: true,
+                    removeComments: true
+                }
+            },
+            main: {
+                src: ['<%= yeoman.app %>/scripts/**/*.html'],
+                dest: '.tmp/concat/scripts/templates.js'
             }
         },
+//        htmlmin: {
+//            dist: {
+//                options: {
+//                    // Optional configurations that you can uncomment to use
+//                    // removeCommentsFromCDATA: true,
+//                    collapseWhitespace: true,
+//                    collapseBooleanAttributes: true,
+//                    removeComments: true
+//                    // removeAttributeQuotes: true,
+//                    // removeRedundantAttributes: true,
+//                    // useShortDoctype: true,
+//                    // removeEmptyAttributes: true,
+//                    // removeOptionalTags: true*/
+//                },
+//                files: [
+//                    {
+//                        expand: true,
+//                        cwd: '<%= yeoman.app %>',
+//                        src: ['*.html', 'scripts/**/*.html', 'conf/*'],
+//                        dest: '<%= yeoman.dist %>'
+//                    }
+//                ]
+//            }
+//        },
 
         // Allow the use of non-minsafe AngularJS files. Automatically makes it
         // minsafe compatible so Uglify does not destroy the ng references
@@ -347,7 +362,8 @@ module.exports = function (grunt) {
                 'copy:styles',
 //                'imagemin',
                 'svgmin',
-                'htmlmin'
+//                'htmlmin'
+                'html2js'
             ]
         },
 
@@ -372,14 +388,21 @@ module.exports = function (grunt) {
             dist: {
              files: {
                '<%= yeoman.dist %>/scripts/jsblackbelt.js': [
-                 '<%= yeoman.dist %>/scripts/jsblackbelt.js'
+                 '.tmp/concat/scripts/jsblackbelt.js'
                ]
+
              }
            }
         },
-        // concat: {
-        //   dist: {}
-        // },
+        concat: {
+           options: {
+               separator: ';'
+           },
+           dist: {
+               src: ['.tmp/concat/scripts/jsblackbelt.js', '.tmp/concat/scripts/templates.js'],
+               dest: '.tmp/concat/scripts/jsblackbelt.js'
+           }
+        },
 
         // Test settings
         karma: {
@@ -447,6 +470,19 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'usemin'
+    ]);
+
+    grunt.registerTask('buildTest', [
+        'clean:dist',
+        'useminPrepare',
+        'concurrent:dist',
+        'autoprefixer',
+        'concat',
+        'copy:dist',
+        'ngmin',
+        'cssmin',
+        'concat:dist',
+        'uglify'
     ]);
 
     grunt.registerTask('default', [
