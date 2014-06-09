@@ -9385,7 +9385,7 @@ angular.module('jsBlackBelt.Directives').directive('jsbbFallbackSrc', [function 
  * If you modify jsBlackBelt code, please let me know or submit a pull request for the benefit of others.
  */
 'use strict';
-angular.module('elniniophotoApp.Directives').directive('jsbbAdvancedImg', [
+angular.module('jsBlackBelt.Directives').directive('jsbbAdvancedImg', [
   '$state',
   '$timeout',
   'ImageSrv',

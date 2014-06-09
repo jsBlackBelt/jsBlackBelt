@@ -7,7 +7,7 @@
 
 'use strict';
 
-angular.module('elniniophotoApp.Directives')
+angular.module('jsBlackBelt.Directives')
     .directive('jsbbAdvancedImg', ['$state', '$timeout', 'ImageSrv', function ($state, $timeout, imageSrv) {
         return {
             restrict: 'AE',

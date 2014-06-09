@@ -4,7 +4,7 @@
 
 'use strict';
 
-angular.module('elniniophotoApp.Services')
+angular.module('jsBlackBelt.Services')
     .service('ImageSrv', [function () {
         return {
             getImageUrlFromId: function (id) {
