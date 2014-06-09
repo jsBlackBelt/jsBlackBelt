@@ -387,8 +387,8 @@ module.exports = function (grunt) {
             },
             dist: {
              files: {
-               '<%= yeoman.dist %>/scripts/jsblackbelt.js': [
-                 '.tmp/concat/scripts/jsblackbelt.js'
+               '<%= yeoman.dist %>/scripts/jsblackbelt.min.js': [
+                 '<%= yeoman.dist %>/scripts/jsblackbelt.max.js'
                ]
 
              }
@@ -400,7 +400,7 @@ module.exports = function (grunt) {
            },
            dist: {
                src: ['.tmp/concat/scripts/jsblackbelt.js', '.tmp/concat/scripts/templates.js'],
-               dest: '.tmp/concat/scripts/jsblackbelt.js'
+               dest: '<%= yeoman.dist %>/scripts/jsblackbelt.max.js'
            }
         },
 
@@ -468,21 +468,9 @@ module.exports = function (grunt) {
         'copy:dist',
         'ngmin',
         'cssmin',
-        'uglify',
-        'usemin'
-    ]);
-
-    grunt.registerTask('buildTest', [
-        'clean:dist',
-        'useminPrepare',
-        'concurrent:dist',
-        'autoprefixer',
-        'concat',
-        'copy:dist',
-        'ngmin',
-        'cssmin',
         'concat:dist',
-        'uglify'
+        'uglify:dist',
+        'usemin'
     ]);
 
     grunt.registerTask('default', [
