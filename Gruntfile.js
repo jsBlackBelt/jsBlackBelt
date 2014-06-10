@@ -236,7 +236,9 @@ module.exports = function (grunt) {
                     collapseWhitespace: true,
                     collapseBooleanAttributes: true,
                     removeComments: true
-                }
+                },
+                module: 'jsBlackBelt',
+                base: 'app'
             },
             main: {
                 src: ['<%= yeoman.app %>/scripts/**/*.html'],
