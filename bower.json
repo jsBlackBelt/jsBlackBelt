@@ -1,30 +1,32 @@
 {
-    "name": "js-black-belt",
-    "version": "0.1.1",
-    "dependencies": {
-        "angular": "~1.2.0",
-        "json3": "~3.2.4",
-        "es5-shim": "~2.1.0",
-        "jquery": "2.0.3",
-        "sass-bootstrap": "~3.0.0",
-        "angular-resource": "~1.2.0",
-        "angular-cookies": "~1.2.0",
-        "angular-sanitize": "~1.2.0",
-        "angular-route": "~1.2.0",
-        "angularLocalStorage": "~0.1.7",
-        "angular-bootstrap": "~0.11",
-        "angular-ui": "~0.4",
-        "angular-translate": "~1.1.1",
-        "ng-grid": "~2.0.11",
-        "underscore": "~1.6.0",
-        "angular-underscore": "*",
-        "bootstrap": "~3.1.1"
-    },
-    "devDependencies": {
-        "angular-mocks": "~1.2.0",
-        "angular-scenario": "~1.2.0"
-    },
-    "resolutions": {
-        "jquery": "2.0.3"
-    }
+  "name": "jsblackbelt",
+  "version": "0.1.1",
+  "dependencies": {
+    "angular": "~1.2.0",
+    "json3": "~3.2.4",
+    "es5-shim": "~2.1.0",
+    "jquery": "2.0.3",
+    "sass-bootstrap": "~3.0.0",
+    "angular-resource": "~1.2.0",
+    "angular-cookies": "~1.2.0",
+    "angular-sanitize": "~1.2.0",
+    "angular-route": "~1.2.0",
+    "angularLocalStorage": "~0.1.7",
+    "angular-bootstrap": "~0.11",
+    "angular-ui": "~0.4",
+    "angular-translate": "~1.1.1",
+    "ng-grid": "~2.0.11",
+    "underscore": "~1.6.0",
+    "angular-underscore": "*",
+    "bootstrap": "~3.1.1",
+    "angular-ui-router": "~0.2.10"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.0",
+    "angular-scenario": "~1.2.0"
+  },
+  "resolutions": {
+    "jquery": "2.0.3",
+    "angular": "~1.2.0"
+  }
 }

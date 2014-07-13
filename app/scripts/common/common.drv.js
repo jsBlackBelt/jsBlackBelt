@@ -8,40 +8,6 @@
 'use strict';
 
 angular.module('jsBlackBelt.Directives')
-    .directive('jsbbFallbackSrc', [function () {
-        /**
-         * This directive serves as a fallback in case the image source wasn't found.
-         * It is supposed to be placed as an attribute in an <img> tag.
-         *
-         * You can optionally supply a reference to a fallback image.
-         * If not supplied, 'images/error.jpg' will be used.
-         */
-        return {
-            restrict: 'A',
-            link: function($scope, element, attrs) {
-                var fallback = attrs.jsbbFallbackSrc;
-
-                if (fallback === '') {
-                    fallback = "images/error.jpg";
-                }
-
-                element.bind('error', function () {
-                    if (angular.isUndefined($scope.fallbackCount)) {
-                        $scope.fallbackCount = 0;
-                    }
-
-                    if ($scope.fallbackCount >= 1) {
-                        element.unbind('error');
-
-                    } else {
-                        element.attr("src", fallback);
-                        $scope.fallbackCount++;
-
-                    }
-                });
-            }
-        };
-    }])
     .directive('jsbbPopOverDialog', ['$log', '$document', function ($log, $window) {
         return {
             restrict: 'A',

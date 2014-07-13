@@ -27,7 +27,7 @@ module.exports = function (grunt) {
         yeoman: {
             // configurable paths
             app: 'app',
-            dist: 'dist'
+            dist: 'dist/jsblackbelt'
         },
 
         // Watches files for changes and runs tasks based on the changed files
@@ -390,7 +390,7 @@ module.exports = function (grunt) {
             dist: {
              files: {
                '<%= yeoman.dist %>/scripts/jsblackbelt.min.js': [
-                 '<%= yeoman.dist %>/scripts/jsblackbelt.max.js'
+                 '<%= yeoman.dist %>/scripts/jsblackbelt.js'
                ]
 
              }
@@ -402,7 +402,7 @@ module.exports = function (grunt) {
            },
            dist: {
                src: ['.tmp/concat/scripts/jsblackbelt.js', '.tmp/concat/scripts/templates.js'],
-               dest: '<%= yeoman.dist %>/scripts/jsblackbelt.max.js'
+               dest: '<%= yeoman.dist %>/scripts/jsblackbelt.js'
            }
         },
 
@@ -429,6 +429,26 @@ module.exports = function (grunt) {
                     src: '**/*',
                     dot: true
                 }]
+            }
+        },
+        includeSource: {
+            options: {
+                basePath: 'app',
+                templates: {
+                    html: {
+                        js: '<script src="{filePath}"></script>',
+                        css: '<link rel="stylesheet" type="text/css" href="{filePath}" />'
+                    },
+                    scss: {
+                        scss: '@import "{filePath}";',
+                        css: '@import "{filePath}";'
+                    }
+                }
+            },
+            myTarget: {
+                files: {
+                    'app/index.html': 'app/index.tpl.html'
+                }
             }
         }
     });
@@ -463,6 +483,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
+        'includeSource',
         'useminPrepare',
         'concurrent:dist',
         'autoprefixer',

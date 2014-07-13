@@ -1,6 +1,6 @@
 {
   "name": "jsBlackBelt",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -49,7 +49,8 @@
     "jasmine-reporters": "~0.4.1",
     "grunt-protractor-runner": "~0.2.4",
     "grunt-contrib-compress": "~0.9.1",
-    "grunt-html2js": "~0.2.7"
+    "grunt-html2js": "~0.2.7",
+    "grunt-include-source": "~0.4.1"
   },
   "engines": {
     "node": ">=0.8.0"

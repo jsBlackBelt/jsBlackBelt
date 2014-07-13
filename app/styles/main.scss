@@ -16,50 +16,6 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 }
 
 //*************************************
-//    AdvancedImg
-//*************************************
-
-.gallery {
-  padding: 0 0 0 10px;
-  width: 1065px;
-}
-
-.animate-enter {
-  -webkit-transition: 1s linear all; /* Chrome */
-  transition: 1s linear all;
-  opacity: 0;
-}
-
-.animate-enter.animate-enter-active {
-  opacity: 1;
-}
-
-.thumb {
-  width: 150px;
-  height: 150px;
-  float: left;
-  cursor: pointer;
-}
-
-.advancedImg {
-  display: block;
-  opacity: 1;
-  filter: alpha(opacity=100);
-
-  img {
-    opacity: 0.5;
-    filter: alpha(opacity=50);
-    max-width: 100%;
-
-    &:hover {
-      opacity: 1;
-      filter: alpha(opacity=100);
-    }
-
-  }
-}
-
-//*************************************
 //
 //*************************************
 
